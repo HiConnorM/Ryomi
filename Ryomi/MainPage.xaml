@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Ryomi" 
+       x:Class="Ryomi.MainPage"> 
+
+    <TabBar>
+        <!-- Home Page -->
+        <ShellContent Title="Home" Icon="home.png">
+            <local:HomePage />
+        </ShellContent>
+
+        <!-- Search Page -->
+        <ShellContent Title="Search" Icon="search.png">
+            <local:SearchPage />
+        </ShellContent>
+
+        <!-- Scanner Page -->
+        <ShellContent Title="Scanner" Icon="scanner.png">
+            <local:ScannerPage />
+        </ShellContent>
+
+        <!-- Tracking Page -->
+        <ShellContent Title="Tracking" Icon="tracking.png">
+            <local:TrackingPage />
+        </ShellContent>
+
+        <!-- User Profile Page -->
+        <ShellContent Title="Profile" Icon="profile.png">
+            <local:UserProfilePage />
+        </ShellContent>
+    </TabBar>
+</Shell>
