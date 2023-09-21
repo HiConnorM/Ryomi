@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Ryomi"
              x:Class="Ryomi.App">
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
+    <!-- App.xaml -->
+<Application.Resources>
+    <ResourceDictionary>
+        <Color x:Key="PrimaryColor">#FF5733</Color> <!-- Bright Orange -->
+        <Color x:Key="SecondaryColor">#33FF57</Color> <!-- Bright Green -->
+        <Color x:Key="BackgroundColor">#000</Color> <!-- Dark Gray -->
+        <Color x:Key="TextColor">#FFFFFF</Color> <!-- White -->
+    </ResourceDictionary>
+</Application.Resources>
+
 </Application>
 

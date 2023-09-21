@@ -2,11 +2,70 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ryomi.HomePage"
-             Title="HomePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             BackgroundColor="{StaticResource BackgroundColor}">
+
+    <ScrollView>
+        <StackLayout Spacing="20">
+
+            <!-- Top Recipes Carousel -->
+            <CarouselView ItemsSource="{Binding TopRecipes}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding Image}" WidthRequest="200" HeightRequest="200"/>
+                            <Label Text="{Binding Name}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <!-- Anime Inspired and Trending Dishes Section -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Anime Inspired -->
+                <StackLayout Grid.Column="0" Padding="10">
+                    <Image Source="anime_inspired.jpg" Aspect="AspectFill"/>
+                    <Label Text="Anime Inspired" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <!-- Trending Dishes -->
+                <StackLayout Grid.Column="1" Padding="10">
+                    <Image Source="trending_dishes.jpg" Aspect="AspectFill"/>
+                    <Label Text="Trending Dishes" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+
+            <!-- Categories Section -->
+            <StackLayout>
+                <Image Source="categories.jpg" Aspect="AspectFill"/>
+                <Label Text="Categories" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+            </StackLayout>
+
+            <!-- Articles Section -->
+            <StackLayout>
+                <Label Text="Articles" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Four placeholder images for articles. Adjust these as needed. -->
+                    <Image Grid.Row="0" Grid.Column="0" Source="article1.jpg" Aspect="AspectFill"/>
+                    <Image Grid.Row="0" Grid.Column="1" Source="article2.jpg" Aspect="AspectFill"/>
+                    <Image Grid.Row="1" Grid.Column="0" Source="article3.jpg" Aspect="AspectFill"/>
+                    <Image Grid.Row="1" Grid.Column="1" Source="article4.jpg" Aspect="AspectFill"/>
+                </Grid>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

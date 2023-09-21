@@ -30,18 +30,18 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-
-		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
-
-		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
@@ -52,4 +52,24 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Splash\ryomisplash.svg" />
+	  <None Remove="Resources\Images\" />
+	  <None Remove="Resources\Images\ryomiappicon.png" />
+	  <None Remove="Resources\drawable\ryomiappicon.png" />
+	  <None Remove="Resources\drawable\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Splash\ryomisplash.svg" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Resources\Images\" />
+	  <Folder Include="Resources\drawable\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AndroidResource Include="Resources\drawable\ryomiappicon.png">
+	    <SubType></SubType>
+	    <Generator></Generator>
+	  </AndroidResource>
+	</ItemGroup>
 </Project>
