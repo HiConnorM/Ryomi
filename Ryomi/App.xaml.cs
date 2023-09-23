@@ -1,4 +1,6 @@
-﻿namespace Ryomi;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Ryomi;
 
 public partial class App : Application
 {
@@ -8,5 +10,14 @@ public partial class App : Application
 
 		MainPage = new AppShell();
 	}
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddDbContext<DbContext>(options =>
+            options.UseSqlite("Filename=mydatabase.db"));
+        // ... other services
+    }
+
 }
+
+
 

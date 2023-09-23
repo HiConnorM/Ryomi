@@ -4,5 +4,9 @@
       "commandName": "MsixPackage",
       "nativeDebugging": false
     }
-  }
+  },
+
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=tcp:ryomi-server.database.windows.net,1433;Initial Catalog=Ryomi;Persist Security Info=False;User ID=CloudSA26f1971e;Password={LovingGab@0208};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+    }
 }
