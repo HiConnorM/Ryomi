@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Ryomi;
 namespace Ryomi
 {
     public class User
@@ -15,4 +15,3 @@ namespace Ryomi
     }
 
 }
-

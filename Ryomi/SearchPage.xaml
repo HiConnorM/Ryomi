@@ -4,6 +4,7 @@
              x:Class="Ryomi.SearchPage"
              Title="SearchPage">
     <VerticalStackLayout>
+    <SearchBar Placeholder="" />
         <Label 
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
